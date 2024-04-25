@@ -3,7 +3,7 @@ import L from 'leaflet';
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import styles from './styles.module.css';
-import '../../../node_modules/leaflet/dist/leaflet.css'
+import 'leaflet/dist/leaflet.css';
 
 
 
