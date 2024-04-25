@@ -1,0 +1,47 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75%;
+
+}
+
+.loadingaa {
+    padding: 50px;
+}
+
+.container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.selectContainer {
+    display: flex;
+    gap: 10px;
+    margin-block: 20px;
+}
+
+.marginBottom {
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .loading {
+        margin-top: 30%;
+    }
+    .selectContainer {
+       text-align: center;
+    }
+}
+

@@ -1,0 +1,159 @@
+.home {
+    height: 100vh;
+    width: 100vw;
+}
+
+.wrapper {
+    height: 80%;
+    width: 90%;
+    position: relative;
+    margin-inline: 50px;
+    border: 1px solid #6da1ce;
+    margin-block: 100px;
+
+}
+
+.content {
+    width: 60%;
+    color: aliceblue;
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+
+}
+
+h1 {
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 75px;
+    text-shadow: 0px 0px 10px rgba(98, 124, 195, 0.5);
+}
+
+p {
+    font-size: 17px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+.scrollImg{
+    width: 50px;
+    height:60px;
+    margin-left: 45%;
+    animation: appear-disappear 2s infinite alternate;
+}
+
+@keyframes appear-disappear {
+    0% {
+      opacity: 1;
+      transform: translateY(20px); 
+    }
+    100% {
+      opacity: 0.2;
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+.cover {
+    position: absolute;
+    width: 600px;
+    height: 580px;
+    max-width: 100%;
+    background-color: transparent;
+    z-index: 1;
+
+}
+
+
+.image {
+    width: 50%;
+    height: 100%;
+    transform: translateX(1100px);
+    transform: translateY(70px);
+    position: relative;
+
+
+}
+
+iframe {
+    width: 600px;
+    height: 580px;
+    max-width: 100%;
+    border: none;
+    filter: drop-shadow(0px 0px 10px rgba(183, 194, 224, 0.5));
+}
+
+
+.logo {
+    background-color: #041c42;
+    width: 180px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    right: -3px;
+    z-index: 1;
+}
+
+.restImage {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+    transform: rotate(12deg);
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .wrapper {
+        margin: 80px auto;
+    }
+
+    .content {
+        width: 90%;
+        top: 7%;
+        left: 0;
+        gap: 25px;
+        text-align: center;
+        margin-inline: 5%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    h1 {
+        font-size: 45px;
+        line-height: 45px;
+    }
+
+    p {
+        font-size: 15px;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+    }
+
+    .scrollImg{
+        width: 30px;
+        height:40px;
+        margin-left: 0;
+    }
+    
+
+    .image {
+        width: max-content;
+        height: 100%;
+    }
+
+    .logo {
+        background-color: #041c42;
+        right: 0;
+    }
+}
