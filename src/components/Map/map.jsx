@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
-import L from 'leaflet';
 
 import styles from './styles.module.css';
 
 
 
-const Map = ({ coords, places, setCoords, setChildClicked}) => {
+const Map = ({ coords, places, setCoords, setChildClicked }) => {
 
     const [latlng, setLatlng] = useState({ lat: null, lng: null });
 
-
+    var L = window.L;
 
 
     useEffect(() => {
@@ -26,7 +25,7 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
         }).addTo(map);
 
 
-    
+
 
         let DefaultIcon = L.icon({
             iconUrl: "./marker-icon-2x.png",
@@ -76,18 +75,12 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
 
     // console.log("map coords : lat : " + coords.lat + " lng : " + coords.lng);
 
-    
+
     return (
         <div id="map" className={styles.map}>
         </div>
     );
 
-
 };
-
-
-
-
-
 
 export default Map;
