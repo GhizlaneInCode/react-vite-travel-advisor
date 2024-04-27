@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import './appService.css'
 import { getPlaces } from '../../api/travelAdvisorAPI';
 
-import 'leaflet-control-geocoder';
-
 import { Spin } from 'antd';
 import List from '../List/list';
 import Map from '../Map/map';
