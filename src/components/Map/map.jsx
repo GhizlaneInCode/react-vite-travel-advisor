@@ -53,7 +53,7 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
 
                 setCoords({ lat: latlng.lat, lng: latlng.lng });
 
-                console.log("==> newww coords : lat " + latlng.lat + " lng : " + latlng.lng);
+                // console.log("==> newww coords : lat " + latlng.lat + " lng : " + latlng.lng);
 
                 L.marker(latlng)
                     .addTo(map)
@@ -72,7 +72,7 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
         };
     }, [latlng]);
 
-    console.log("map coords : lat : " + coords.lat + " lng : " + coords.lng);
+    // console.log("map coords : lat : " + coords.lat + " lng : " + coords.lng);
 
     
     return (
