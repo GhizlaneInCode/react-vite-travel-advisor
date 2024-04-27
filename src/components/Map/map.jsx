@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import 'leaflet/dist/leaflet.js'
 import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import 'leaflet/dist/leaflet.js'
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 
@@ -9,11 +8,11 @@ import styles from './styles.module.css';
 
 
 
-const Map = ({ coords, places, setCoords, setChildClicked }) => {
+const Map = ({ coords, places, setCoords, setChildClicked}) => {
 
     const [latlng, setLatlng] = useState({ lat: null, lng: null });
 
-
+    var L = window.L;
 
     useEffect(() => {
         const map = L.map("map", {
@@ -22,8 +21,7 @@ const Map = ({ coords, places, setCoords, setChildClicked }) => {
             scrollWheelZoom: false,
         });
 
-        const tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        }).addTo(map);
+        const tile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 
 
@@ -39,6 +37,7 @@ const Map = ({ coords, places, setCoords, setChildClicked }) => {
         L.marker([coords.lat, coords.lng]).addTo(map)
             .bindPopup('You are here 😊')
             .openPopup();
+
 
         L.Control.geocoder({
             defaultMarkGeocode: false
