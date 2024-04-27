@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import "leaflet-control-geocoder/dist/Control.Geocoder.js";
+import L from 'leaflet';
+
 import styles from './styles.module.css';
 
 
