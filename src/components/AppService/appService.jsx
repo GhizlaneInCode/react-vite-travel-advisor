@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './appService.css'
 import { getPlaces } from '../../api/travelAdvisorAPI';
 
+import 'leaflet/dist/leaflet.css';
+import 'leaflet/dist/leaflet.js';
+
 import { Spin } from 'antd';
 import List from '../List/list';
 import Map from '../Map/map';
