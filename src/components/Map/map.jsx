@@ -1,9 +1,18 @@
+// import { useState, useEffect } from 'react';
+
+// import 'leaflet/dist/leaflet.css';
+// import 'leaflet/dist/leaflet.js';
+// import "leaflet-control-geocoder/dist/Control.Geocoder.css";
+// import "leaflet-control-geocoder/dist/Control.Geocoder.js";
+// import styles from './styles.module.css';
+
 import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet.js';
+import 'leaflet-control-geocoder'; 
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
-import "leaflet-control-geocoder/dist/Control.Geocoder.js";
 import styles from './styles.module.css';
+import L from 'leaflet'; 
 
 
 
@@ -38,7 +47,7 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
             .openPopup();
 
 
-        L.Control.geocoder({
+        const geocode = L.Control.geocoder({
             defaultMarkGeocode: false
         })
             .on('markgeocode', function (e) {
@@ -63,8 +72,8 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
                 map.fitBounds(e.geocode.bbox);
 
 
-            })
-            .addTo(map);
+            });
+            geocode.addTo(map);
 
         return () => {
             map.remove();
