@@ -65,7 +65,7 @@ const Service = () => {
         setPlaces(flattenPlaces.filter(place => place.name && place.review_count > 0));
         setFilteredPlaces([]);
         setRating('');
-        // console.log("data : " + JSON.stringify(placesData));
+        console.log("data : " + JSON.stringify(placesData));
       } catch (error) {
         console.error('Error fetching data:', error);
       } finally {

@@ -23,27 +23,27 @@ const Home = () => {
 
         mm.add("(min-width: 600px)", () => {
 
-            tl2.fromTo(".content",{
-                x:160,
+            tl2.fromTo(".content", {
+                x: 160,
 
-            },{
-                x:0,
-                duration:2,
-                delay:1
+            }, {
+                x: 0,
+                duration: 2,
+                delay: 1
             });
 
-            tl2.fromTo(".image",{
-                x:2000,
-                opacity:0,
+            tl2.fromTo(".image", {
+                x: 2000,
+                opacity: 0,
 
 
-            },{
-                opacity:1,
+            }, {
+                opacity: 1,
                 scale: 1.7,
                 x: 1100,
                 y: 70,
-                delay:-1,
-                duration:2,
+                delay: -1,
+                duration: 2,
             });
 
 
@@ -70,6 +70,55 @@ const Home = () => {
                 });
 
 
+        });
+
+
+        mm.add("(min-height: 900px)", () => {
+
+
+            tl2.fromTo(".image", {
+                x: 2000,
+                opacity: 0,
+
+            }, {
+                opacity: 1,
+                scale: 2,
+                x: 1100,
+                y: 230,
+                delay: -1,
+                duration: 2,
+            });
+
+            tl.to(".image", {
+                x: 60,
+                y: 1000,
+                duration: 2,
+                scale: 1,
+            });
+        });
+
+        mm.add("(min-height: 1024px)", () => {
+
+
+            tl2.fromTo(".image", {
+                x: 2000,
+                opacity: 0,
+
+            }, {
+                opacity: 1,
+                scale: 2,
+                x: 1000,
+                y: 270,
+                delay: -1,
+                duration: 2,
+            });
+
+            tl.to(".image", {
+                x: 60,
+                y: 1150,
+                duration: 2,
+                scale: 1,
+            });
         });
 
 

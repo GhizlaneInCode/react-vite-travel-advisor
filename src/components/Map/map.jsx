@@ -1,22 +1,14 @@
-// import { useState, useEffect } from 'react';
-
-// import 'leaflet/dist/leaflet.css';
-// import 'leaflet/dist/leaflet.js';
-// import "leaflet-control-geocoder/dist/Control.Geocoder.css";
-// import "leaflet-control-geocoder/dist/Control.Geocoder.js";
-// import styles from './styles.module.css';
-
 import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/leaflet.js';
-import 'leaflet-control-geocoder'; 
+import 'leaflet-control-geocoder';
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 import styles from './styles.module.css';
-import L from 'leaflet'; 
+import L from 'leaflet';
 
 
 
-const Map = ({ coords, places, setCoords, setChildClicked}) => {
+const Map = ({ coords, places, setCoords, setChildClicked }) => {
 
     const [latlng, setLatlng] = useState({ lat: null, lng: null });
 
@@ -73,13 +65,30 @@ const Map = ({ coords, places, setCoords, setChildClicked}) => {
 
 
             });
-            geocode.addTo(map);
+        geocode.addTo(map);
+
+        // places?.forEach(place => {
+        //     const popupContent = `
+        //     <div style="text-align: center; max-width: 200px;">
+        //         <img src="${place.photos && place.photos.length > 0 ? place.photos[0].src : './restaurant.jpg'}" style="height: 100px; width: 100px; margin: 0 auto;"/>
+        //         <h4 style="font-weight: bold; margin-top: 5px; overflow-wrap: break-word;">${place.name}</h4>
+        //     </div>
+        //     `;
+        //     const popupOptions = {
+        //         maxWidth: "200",
+        //         maxHeight: "200",
+        //         closeButton: false
+        //     };
+        //     const marker = L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(popupContent, popupOptions);
+        //     marker.openPopup();
+        // });
+
 
         return () => {
             map.remove();
 
         };
-    }, [latlng]);
+    }, [latlng, places]);
 
     // console.log("map coords : lat : " + coords.lat + " lng : " + coords.lng);
 
